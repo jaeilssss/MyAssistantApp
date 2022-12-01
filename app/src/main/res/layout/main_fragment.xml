@@ -36,6 +36,8 @@
         android:layout_width="140dp"
         android:layout_height="40dp"
         android:id="@+id/mainPasswordEdit"
+        android:text="@{model.password}"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/passwordTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -9,5 +9,17 @@
         android:id="@+id/mainFragment"
         android:name="com.example.myassistantapp.ui.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_registerPassword"
+            app:destination="@id/registerPassword"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPassword"
+        android:name="com.example.myassistantapp.ui.RegisterPasswordFragment"
+        android:label="RegisterPassword" />
 </navigation>

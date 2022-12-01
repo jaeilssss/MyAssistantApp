@@ -8,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.myassistantapp.R
 
-class RegisterPassword : Fragment() {
+class RegisterPasswordFragment : Fragment() {
 
     companion object {
-        fun newInstance() = RegisterPassword()
+        fun newInstance() = RegisterPasswordFragment()
     }
 
     private lateinit var viewModel: RegisterPasswordViewModel

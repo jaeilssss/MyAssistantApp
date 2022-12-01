@@ -14,13 +14,13 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        var intent = Intent(this,MainActivity::class.java)
 
-        Handler().postDelayed(Runnable {
-
-            var intent = Intent(this,MainActivity::class.java)
-
-            startActivity(intent)
-
-        },2000)
+        startActivity(intent)
+//        Handler().postDelayed(Runnable {
+//
+//
+//
+//        },2000)
     }
 }
