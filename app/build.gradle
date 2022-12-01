@@ -4,7 +4,7 @@ plugins {
     id 'kotlin-parcelize'
 }
 apply plugin: 'kotlin-kapt'
-//apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'dagger.hilt.android.plugin'
 android {
     compileSdkVersion 32
 
@@ -51,7 +51,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
+def    fragment_version = "1.5.3"
 
+//    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+//    implementation 'androidx.activity.activity-ktx:1.3.1'
 
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
@@ -64,6 +67,6 @@ dependencies {
     // Testing Navigation
     androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 
-//    implementation "com.google.dagger:hilt-android:$hilt_version"
-//    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 }

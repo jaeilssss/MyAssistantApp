@@ -8,17 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import com.example.myassistantapp.R
 import com.example.myassistantapp.databinding.MainFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
 
     companion object {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var model: MainViewModel
+    private val model: MainViewModel by viewModels()
 
     private lateinit var binding : MainFragmentBinding
     override fun onCreateView(
@@ -27,8 +30,9 @@ class MainFragment : Fragment() {
     ): View? {
 //        return inflater.inflate(R.layout.main_fragment,container,false)
         binding =  DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
-        model = ViewModelProvider(this).get(MainViewModel::class.java)
+
         showAnimation()
+
 
         return binding.root
 

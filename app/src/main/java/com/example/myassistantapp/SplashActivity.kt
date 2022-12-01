@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+
 
 
 
