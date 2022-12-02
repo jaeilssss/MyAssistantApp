@@ -1,5 +1,7 @@
 package com.example.myassistantapp.ui
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -36,6 +38,8 @@ class MainFragment : Fragment() {
 
     private lateinit var  scope : CoroutineScope
 
+    private lateinit var sharedPreferences: SharedPreferences
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +55,9 @@ class MainFragment : Fragment() {
         model = ViewModelProvider(this).get(MainViewModel::class.java)
         binding.model = model
 
+        sharedPreferences = activity?.getSharedPreferences("UserInfo",Context.MODE_PRIVATE)!!
+
+
         binding.mainPasswordRegister.setOnClickListener {
 
             navController.navigate(R.id.action_mainFragment_to_registerPassword)
@@ -58,37 +65,17 @@ class MainFragment : Fragment() {
 
         binding.mainLogin.setOnClickListener {
 
+            if (model.password.value!!.length == 4) {
 
-            activity?.let { it1 ->
+                if (sharedPreferences.getString("password", "NoData") == model.password.value) {
 
-                var db = UserDatabase.getInstance(it1.applicationContext)
+                        // goTo mainView
+                    Toast.makeText(context,"로그인",Toast.LENGTH_SHORT).show()
 
-
-                Thread(Runnable {
-                    var check =  db!!.userDao().findUserByPassword(model.password.value!!)
-
-                    if(check==null){
-                        println("null")
-                    }else{
-                        println("??")
-                    }
-                }).start()
-
-
-//                scope.launch {
-//                    var check =  db!!.userDao().findUserByPassword(model.password.value!!)
-//
-//                    if(check==null){
-//                        println("dd")
-//                    }
-//                }
-
-
-
-
-
+                }else{
+                    Toast.makeText(context,"유효 하지 않은 비밀번호 입니다",Toast.LENGTH_SHORT).show()
+                }
             }
-
         }
         return binding.root
 

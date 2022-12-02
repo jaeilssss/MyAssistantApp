@@ -1,5 +1,6 @@
 package com.example.myassistantapp.ui
 
+import android.content.SharedPreferences
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,10 @@ class MainViewModel : ViewModel() {
 
 
     var password : MutableLiveData<String> = MutableLiveData("")
+
+
+
+
 
 //    fun login() : Boolean {
 //
