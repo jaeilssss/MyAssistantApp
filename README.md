@@ -12,4 +12,5 @@
 1. Kotlin
 2. SQL DataBase
 3. Service Component
+4. SharedPreference
 ---
