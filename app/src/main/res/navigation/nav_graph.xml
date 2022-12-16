@@ -17,9 +17,16 @@
             app:exitAnim="@android:anim/slide_out_right"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_assistantFragment"
+            app:destination="@id/assistantFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerPassword"
         android:name="com.example.myassistantapp.ui.RegisterPasswordFragment"
         android:label="RegisterPassword" />
+    <fragment
+        android:id="@+id/assistantFragment"
+        android:name="com.example.myassistantapp.ui.AssistantFragment"
+        android:label="AssistantFragment" />
 </navigation>

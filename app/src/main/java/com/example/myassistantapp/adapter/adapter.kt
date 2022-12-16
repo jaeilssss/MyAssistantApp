@@ -1,25 +1,30 @@
 package com.example.myassistantapp.adapter
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myassistantapp.databinding.DataItemBinding
 
 class adapter () : RecyclerView.Adapter<adapter.viewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
-        TODO("Not yet implemented")
+
+
+        return viewHolder(DataItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+
+        return 20
     }
 
 
 
-    inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class viewHolder(binding : DataItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
 
     }

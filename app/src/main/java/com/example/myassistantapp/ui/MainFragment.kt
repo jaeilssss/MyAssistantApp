@@ -70,7 +70,7 @@ class MainFragment : Fragment() {
                 if (sharedPreferences.getString("password", "NoData") == model.password.value) {
 
                         // goTo mainView
-                    Toast.makeText(context,"로그인",Toast.LENGTH_SHORT).show()
+                        navController.navigate(R.id.action_mainFragment_to_assistantFragment)
 
                 }else{
                     Toast.makeText(context,"유효 하지 않은 비밀번호 입니다",Toast.LENGTH_SHORT).show()
